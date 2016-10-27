@@ -14,7 +14,7 @@ bot.about = description
 
 #start checking positions
 def boot(bot):
-    check(playstore_parse(), "playstore")
+    check(playstore_parse(), "PlayStore")
     check(appstore_parse(), "appstore")
 
 #check if an error occurred (the html of the pages changed),
@@ -90,7 +90,7 @@ def final(posizione, store):
 
     if store=="appstore":
         emoji="\U0001F34E"
-    if store=="playstore":
+    if store=="PlayStore":
         emoji="\U0001F916"
 
     variazione=""
@@ -142,7 +142,7 @@ def posizioni_attuali(chat, message, args):
     """
     Posizioni attuali
     """
-    chat.send("<b>playstore:</b> "+str(actual_position("playstore"))+"\n<b>appstore:</b> "+str(actual_position("appstore")), syntax="html")
+    chat.send("<b>PlayStore:</b> "+str(actual_position("PlayStore"))+"\n<b>appstore:</b> "+str(actual_position("appstore")), syntax="html")
 
 #send the average of the positions
 @bot.command("media")
@@ -150,7 +150,7 @@ def medium(chat, message, args):
     """
     mostra la media tra tutte le posizioni loggate
     """
-    chat.send("<b>playstore:</b> "+str(the_3_stats("AVG","playstore"))+"\n<b>appstore:</b> "+str(the_3_stats("AVG","appstore")), syntax="html")
+    chat.send("<b>PlayStore:</b> "+str(the_3_stats("AVG","PlayStore"))+"\n<b>appstore:</b> "+str(the_3_stats("AVG","appstore")), syntax="html")
 
 #send the best position
 @bot.command("migliore")
@@ -158,7 +158,7 @@ def maximum(chat, message, args):
     """
     mostra la posizione migliore mai raggiunta 
     """
-    chat.send("<b>playstore:</b> "+str(the_3_stats("MIN","playstore"))+"\n<b>appstore:</b> "+str(the_3_stats("MIN","appstore")), syntax="html")
+    chat.send("<b>PlayStore:</b> "+str(the_3_stats("MIN","PlayStore"))+"\n<b>appstore:</b> "+str(the_3_stats("MIN","appstore")), syntax="html")
 
 #send the lower position
 @bot.command("peggiore")
@@ -166,7 +166,7 @@ def minimum(chat, message, args):
     """
     mostra la posizione peggiore mai raggiunta
     """
-    chat.send("<b>playstore:</b> "+(str(the_3_stats("MAX","playstore")))+"\n<b>appstore:</b> "+(str(the_3_stats("MAX","appstore"))), syntax="html")
+    chat.send("<b>PlayStore:</b> "+(str(the_3_stats("MAX","PlayStore")))+"\n<b>appstore:</b> "+(str(the_3_stats("MAX","appstore"))), syntax="html")
 
 #send the hystory of logs
 @bot.command("logsappstore")
@@ -180,9 +180,9 @@ def storico_appstore(chat, message, args):
 @bot.command("logsplaystore")
 def storico_playstore(chat, message, args):
     """
-    mostra uno storico delle posizioni su playstore
+    mostra uno storico delle posizioni su PlayStore
     """
-    hystory(chat, message, args, "playstore")
+    hystory(chat, message, args, "PlayStore")
 
 #get a stat of chats using the bot
 @bot.command("chat", hidden=True)
@@ -259,10 +259,10 @@ def first_time_in(store, posizione):
 def first_time(chat, message, args):
     if message.sender.id==owner:
         if (playstore_parse()) is not False:
-            first_time_in("playstore", playstore_parse())
-            message.reply("ok. Playstore is fine. You can start using the bot")
+            first_time_in("PlayStore", playstore_parse())
+            message.reply("ok. PlayStore is fine. You can start using the bot")
         else:
-            message.reply("Playstore: an error occurred. please check the parse function.")
+            message.reply("PlayStore: an error occurred. please check the parse function.")
         if (appstore_parse()) is not False:
             first_time_in("appstore", appstore_parse())
             message.reply("ok. Appstore is fine. You can start using the bot")
