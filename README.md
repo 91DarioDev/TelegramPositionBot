@@ -14,7 +14,7 @@ This uses botogram framework, so to run it, install Python and botogram (https:/
 Internal comments are written in english, even if the strings for the users are currently in italian.
 
 This bot has a lot of useful commands and utilities for the administrators:
-- You can easly do a backup of the database
+- You can easily do a backup of the database
 - You can elaborate stats of the bot usage from users
 - You can send broadcasts to users
 
