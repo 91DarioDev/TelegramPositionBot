@@ -1,6 +1,6 @@
 # TelegramPositionBot
 
-This Telegram Bot (https://core.telegram.org/bots) permits to monitor the Telegram positions on App Store and Play Store leaderboards. 
+This Telegram Bot (https://core.telegram.org/bots) (https://telegram.me/PosizioniTelegramBot) permits to monitor the Telegram positions on App Store and Play Store leaderboards. 
 It checks every 30 min if they changed or not, if so it sends a Telegram message to all the subscribed (with notifications enabled) users with the new position and a comparison.
 
 The bot saves new records in a SQL DB and users can have many informations with commands, like the positions history. It sends broadcasts and it has stats for subscribed users.
