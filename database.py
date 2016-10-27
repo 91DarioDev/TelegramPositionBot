@@ -12,7 +12,7 @@ except:
     pass
 #table containing posistion and date 
 try:
-    c.execute("CREATE TABLE playstore(id INTEGER PRIMARY KEY, posizione INTEGER, OrderDate datetime NOT NULL DEFAULT(datetime()))")
+    c.execute("CREATE TABLE PlayStore(id INTEGER PRIMARY KEY, posizione INTEGER, OrderDate datetime NOT NULL DEFAULT(datetime()))")
 except:
     pass
 #table containing posistion and date 
