@@ -5,21 +5,16 @@ from config import *
 #create the db and open it
 conn = sqlite3.connect(db_name)
 c = conn.cursor()
+
 #table containing users. subscribed by default.
-try:
-    c.execute("CREATE TABLE chat(id INTEGER PRIMARY KEY, iscritto INTEGER NOT NULL DEFAULT (1), tipo TEXT)")
-except:
-    pass
+c.execute("CREATE TABLE IF NOT EXISTS chat(id INTEGER PRIMARY KEY, iscritto INTEGER NOT NULL DEFAULT (1), tipo TEXT)")
+
 #table containing posistion and date 
-try:
-    c.execute("CREATE TABLE playstore(id INTEGER PRIMARY KEY, posizione INTEGER, OrderDate datetime NOT NULL DEFAULT(datetime()))")
-except:
-    pass
+c.execute("CREATE TABLE IF NOT EXISTS playstore(id INTEGER PRIMARY KEY, posizione INTEGER, OrderDate datetime NOT NULL DEFAULT(datetime()))")
+
 #table containing posistion and date 
-try:
-    c.execute("CREATE TABLE appstore(id INTEGER PRIMARY KEY, posizione INTEGER, OrderDate datetime NOT NULL DEFAULT(datetime()))")
-except:
-    pass
+c.execute("CREATE TABLE IF NOT EXISTS appstore(id INTEGER PRIMARY KEY, posizione INTEGER, OrderDate datetime NOT NULL DEFAULT(datetime()))")
+
 conn.commit()
 
 #automatically add to the database users chatting with the bot. subscribed by default -> default is 1
