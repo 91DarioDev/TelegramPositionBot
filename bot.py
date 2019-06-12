@@ -209,7 +209,7 @@ def no_notif(chat, message, args):
     notif(chat, message, args, 0)
     #a message you disabled notifications
     message.reply("<b>Disiscritto!</b> Potrai continuare a usare il bot senza doverlo bloccare, non ricevendo più le \
-notifiche. Se ci ripensi /getupdate", syntax="html")
+notifiche. Se ci ripensi /getnotification", syntax="html")
 
 #send a broadcast to every user
 @bot.process_message
